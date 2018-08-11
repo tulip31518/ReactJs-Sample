@@ -9,7 +9,7 @@ var config = {
        port: 8080
     },
     module: {
-       loaders: [
+       rules: [
           {
              test: /\.jsx?$/,
              exclude: /node_modules/,
