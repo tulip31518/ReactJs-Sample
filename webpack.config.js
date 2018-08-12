@@ -1,4 +1,5 @@
 var config = {
+    mode: 'production',
     entry: './main.js',
     output: {
        path:'/',
