@@ -1,9 +1,9 @@
 var config = {
     mode: 'production',
-    entry: './main.js',
+    entry: './App/main.js',
     output: {
        path:'/',
-       filename: 'index.js',
+       filename: 'bundle.js'
     },
     devServer: {
        inline: true,
