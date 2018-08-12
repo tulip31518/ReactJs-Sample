@@ -9,11 +9,11 @@ class App extends React.Component {
         this.state = {
             data: []
          }
-       
+         
          this.setStateHandler = this.setStateHandler.bind(this);
         this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
         this.findDomNodeHandler = this.findDomNodeHandler.bind(this);
-     };
+     };     
 
      setStateHandler() {
         var item = "setState..."
@@ -36,7 +36,7 @@ class App extends React.Component {
             <h3>Bool: {this.props.propBool ? "True..." : "False..."}</h3>
             <h3>Func: {this.props.propFunc(3)}</h3>
             <h3>Number: {this.props.propNumber}</h3>
-            <h3>String: {this.props.propString}</h3>
+            <h3>String: {this.props.propString}</h3>            
 
             <button onClick = {this.setStateHandler}>SET STATE</button>
             <h4>State Array: {this.state.data}</h4>
@@ -50,6 +50,37 @@ class App extends React.Component {
       );
    }
 }
+
+class Content extends React.Component {
+    componentWillMount() {
+       console.log('Component WILL MOUNT!')
+    }
+    componentDidMount() {
+       console.log('Component DID MOUNT!')
+    }
+    componentWillReceiveProps(newProps) {    
+       console.log('Component WILL RECIEVE PROPS!')
+    }
+    shouldComponentUpdate(newProps, newState) {
+       return true;
+    }
+    componentWillUpdate(nextProps, nextState) {
+       console.log('Component WILL UPDATE!');
+    }
+    componentDidUpdate(prevProps, prevState) {
+       console.log('Component DID UPDATE!')
+    }
+    componentWillUnmount() {
+       console.log('Component WILL UNMOUNT!')
+    }
+    render() {
+       return (
+          <div>
+             <h3></h3>
+          </div>
+       );
+    }
+ }
 App.propTypes = {
    name: PropTypes.string,
    propArray: PropTypes.array.isRequired,
