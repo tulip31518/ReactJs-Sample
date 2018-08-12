@@ -9,6 +9,7 @@ var config = {
        inline: true,
        port: 8080
     },
+    
     module: {
        rules: [
           {
